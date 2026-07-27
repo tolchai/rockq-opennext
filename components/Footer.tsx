@@ -33,8 +33,6 @@ const Footer: React.FC<FooterProps> = ({
   services,
   solutions,
 }) => {
-  const { rockqFooterQuote } = options;
-
   return (
     <div className='py-12 bg-black text-white/50 max-md:px-4 md:pb-10'>
       <Container className={cn('relative', {})}>
@@ -62,11 +60,11 @@ const Footer: React.FC<FooterProps> = ({
                   <Q />
                 </span>
               </div>
-              {rockqFooterQuote && (
+              {options.rockqFooterQuote && (
                 <div
                   className='text-content md:w-1/2'
                   dangerouslySetInnerHTML={{
-                    __html: rockqFooterQuote,
+                    __html: options.rockqFooterQuote,
                   }}
                 />
               )}
