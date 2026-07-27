@@ -22,6 +22,8 @@ import { slugify } from '@/utils/utils';
 import { GlobalSettings, Service, Solution } from '@/graphql/generated';
 
 import Logo from '@/public/images/ui/logo.svg';
+import LogoNew from '@/public/images/ui/logo-new.svg';
+
 import Menu from '@/public/images/ui/menu.svg';
 import Close from '@/public/images/ui/close.svg';
 import Phone from '@/public/images/ui/phone.svg';
@@ -141,12 +143,12 @@ const Header: React.FC<HeaderProps> = ({
         <div className='relative flex items-center justify-between h-12 pl-5 pr-1 md:pl-8 md:pr-2 md:h-14'>
           <div className='absolute z-20 lg:z-10 backdrop-blur-[10px] inset-0 rounded-full overflow-hidden bg-white/90'></div>
           <div
-            className={cn('z-30 w-22 transition-opacity', {
+            className={cn('z-30 w-40 transition-opacity', {
               // 'max-lg:opacity-0 max-lg:pointer-events-none': openedMenu,
             })}
           >
             <Link href={'/'} className='block text-black'>
-              <Logo />
+              <LogoNew />
             </Link>
           </div>
           <div

@@ -8,7 +8,7 @@ interface SocialProps {
 }
 
 const Social: React.FC<SocialProps> = ({ options }) => {
-  const { facebook, linkedin, twitter, additionalLinks } = options;
+  const { facebook, linkedin, twitter, additionalLinks } = options || {};
 
   return (
     <ul className='flex flex-col gap-1'>

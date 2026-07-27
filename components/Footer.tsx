@@ -60,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({
                   <Q />
                 </span>
               </div>
-              {options.rockqFooterQuote && (
+              {options?.rockqFooterQuote && (
                 <div
                   className='text-content md:w-1/2'
                   dangerouslySetInnerHTML={{
