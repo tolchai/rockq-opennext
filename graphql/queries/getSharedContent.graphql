@@ -1,0 +1,92 @@
+query GetSharedContent {
+  options {
+    globalSettings {
+      email
+      facebook
+      legalNoteLong
+      legalNoteLongEn
+      legalNoteShort
+      rockqFooterQuote
+      linkedin
+      phone
+      phoneNote
+      twitter
+      additionalLinks {
+        label
+        url
+      }
+      mainFormId
+      opportunitiesZapierHook
+      mainZapierHook
+      opportunitiesFormId
+      opportunitiesContactEmail
+      opportunitiesContactPerson
+      opportunitiesContactImage {
+        node {
+          sourceUrl
+          mediaDetails {
+            width
+            height
+          }
+        }
+      }
+      favicon {
+        node {
+          sourceUrl
+        }
+      }
+      map {
+        address
+        googleMapsLink
+        mapImage {
+          node {
+            sourceUrl
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+  }
+  services(where: { orderby: { field: MENU_ORDER, order: ASC } }) {
+    nodes {
+      slug
+      uri
+      title
+      content
+      serviceDetails {
+        menuSubheader
+        icon {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+  solutions(where: { orderby: { field: MENU_ORDER, order: ASC } }) {
+    nodes {
+      slug
+      uri
+      title
+      content
+      solutionDetails {
+        menuSubheader
+      }
+    }
+  }
+  headerMenu: menuItems(where: { location: MAIN_MENU }) {
+    nodes {
+      title: label
+      uri
+    }
+  }
+  footerMenu: menuItems(where: { location: FOOTER_MENU }) {
+    nodes {
+      title: label
+      uri
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import '../../styles/main.css' reference;
+
+.content {
+  p:last-child,
+  h2 {
+    @variant md {
+      @apply indent-32;
+    }
+  }
+  img {
+    @apply inline;
+    width: 11.25rem;
+    @variant md {
+      width: 14.875rem;
+    }
+    @variant lg {
+      width: 19.625rem;
+    }
+  }
+}

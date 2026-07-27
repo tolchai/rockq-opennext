@@ -1,0 +1,989 @@
+query GetSolutionByUri($uri: ID!) {
+  solution(id: $uri, idType: SLUG) {
+    title
+    uri
+    content
+    modules {
+      modules {
+        __typename
+        ... on ModulesModulesFullHomepageHeaderLayout {
+          homepageHeaderHeader
+          homepageHeaderContent
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          moduleSettings {
+            active
+            menuTitle
+            moduleId
+            showInMenu
+          }
+        }
+        ... on ModulesModulesHeaderLayout {
+          header
+          illustrationType
+          gallery {
+            nodes {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesHomepageHeaderLayout {
+          homepageHeaderContent
+          homepageHeaderContentMobile
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          logosNew {
+            nodes {
+              sourceUrl
+              mimeType
+              mediaDetails {
+                width
+                height
+              }
+              imageFileDetails {
+                width
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesGalleryLayout {
+          images {
+            nodes {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesSingleVideoLayout {
+          videoUrl
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesSingleImageLayout {
+          fieldGroupName
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            moduleId
+            menuTitle
+            active
+          }
+        }
+        ... on ModulesModulesNumbersLayout {
+          numbers {
+            value
+            label
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesQuotesLayout {
+          authorType
+          authorSelect {
+            nodes {
+              ... on Person {
+                id
+                title
+                personDetails {
+                  position
+                  bio
+                }
+                featuredImage {
+                  node {
+                    sourceUrl
+                    mediaDetails {
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+          }
+          author
+          position
+          quote
+          withImage
+          imageLayout
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          portrait {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesHistoryLayout {
+          header
+          history {
+            year
+            content
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesAboutLayout {
+          contentHTML: content
+          header
+          points {
+            title
+            content
+            illustration {
+              node {
+                sourceUrl
+                mediaDetails {
+                  width
+                  height
+                }
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesTeamLayout {
+          header
+          peopleRelationship(first: 100) {
+            nodes {
+              ... on Person {
+                id
+                title
+                personDetails {
+                  bio
+                  position
+                }
+                featuredImage {
+                  node {
+                    sourceUrl
+                    mediaDetails {
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+          }
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          layout
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesSinglePersonLayout {
+          header
+          backgroundImage {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          selectedPerson {
+            nodes {
+              ... on Person {
+                id
+                title
+                personDetails {
+                  bio
+                  position
+                }
+                featuredImage {
+                  node {
+                    sourceUrl
+                    mediaDetails {
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesFundsLayout {
+          content
+          header
+          withSeparatedMainFund
+          mainFundIntro
+          fundSelection
+          selectedFunds {
+            nodes {
+              ... on Fund {
+                slug
+                uri
+                title
+                content
+                fundDetails {
+                  netAssetValue
+                  shortDescription
+                  withDetailLink
+                  fundType
+                  fundTags {
+                    fundTagName
+                    fundTagFeatured
+                  }
+                  trackRecord {
+                    label
+                    value
+                  }
+                  # heroDisplay
+                }
+              }
+            }
+          }
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesFundSectorsLayout {
+          header
+          moduleSettings {
+            active
+            menuTitle
+            moduleId
+            showInMenu
+          }
+        }
+        ... on ModulesModulesSingleFundLayout {
+          header
+          fund {
+            nodes {
+              ... on Fund {
+                slug
+                uri
+                title
+                content
+                fundDetails {
+                  netAssetValue
+                  shortDescription
+                  withDetailLink
+                  fundType
+                  fundTags {
+                    fundTagName
+                    fundTagFeatured
+                  }
+                  trackRecord {
+                    label
+                    value
+                  }
+                  # heroDisplay
+                }
+              }
+            }
+          }
+          moduleSettings {
+            active
+            menuTitle
+            moduleId
+            showInMenu
+          }
+        }
+        ... on ModulesModulesInitiativesLayout {
+          header
+          moduleSettings {
+            active
+            menuTitle
+            moduleId
+            showInMenu
+          }
+        }
+        ... on ModulesModulesInvestorsInfoLayout {
+          header
+          contentRepeater: content {
+            title
+            description
+          }
+          downloads {
+            sectionTitle
+            subsections {
+              subsectionTitle
+              subsectionFiles {
+                fileName
+                file {
+                  node {
+                    mediaItemUrl
+                    filePath
+                    file
+                  }
+                }
+                downloadUrl
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesCtaLayout {
+          content
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesFormLayout {
+          # content
+          # buttons {
+          #   label
+          #   type
+          #   url
+          # }
+          withCustomFormIntro
+          customFormIntro
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesTextLayout {
+          content
+          withContactLink
+          withSecondaryContent
+          secondaryContent
+          withImage
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesTextBlocksLayout {
+          fieldGroupName
+          header
+          textBlocks {
+            content
+            image {
+              node {
+                sourceUrl
+                mediaDetails {
+                  width
+                  height
+                }
+                imageFileDetails {
+                  width
+                }
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            moduleId
+            menuTitle
+            active
+          }
+        }
+        ... on ModulesModulesFaqsLayout {
+          header
+          faqs {
+            question
+            answer
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesLinksLayout {
+          header
+          links {
+            url
+            type
+            moduleId
+            label
+            page {
+              nodes {
+                id
+                uri
+              }
+            }
+          }
+          moduleSettings {
+            active
+            menuTitle
+            showInMenu
+            moduleId
+          }
+        }
+        ... on ModulesModulesLegalLayout {
+          header
+          legalBlocks {
+            __typename
+            ... on ModulesModulesLegalBlocksLegalContentLayout {
+              blockContent
+              blockTitle
+            }
+            ... on ModulesModulesLegalBlocksLegalLinksLayout {
+              blockTitle
+              links {
+                label
+                url
+              }
+            }
+            ... on ModulesModulesLegalBlocksLegalDownloadsLayout {
+              blockTitle
+              downloadSections {
+                sectionTitle
+                subsections {
+                  subsectionTitle
+                  subsectionFiles {
+                    fileName
+                    file {
+                      node {
+                        mediaItemUrl
+                        filePath
+                        file
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          moduleSettings {
+            active
+            menuTitle
+            showInMenu
+            moduleId
+          }
+        }
+        ... on ModulesModulesFundAboutLayout {
+          description
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          numbers {
+            label
+            value
+          }
+          logo {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+              imageFileDetails {
+                width
+              }
+            }
+          }
+          moduleSettings {
+            active
+            menuTitle
+            showInMenu
+          }
+        }
+        ... on ModulesModulesFundFeaturesLayout {
+          header
+          features {
+            title
+            description
+            icon
+          }
+          withImageBackground
+          image {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+              imageFileDetails {
+                width
+              }
+            }
+          }
+          moduleSettings {
+            active
+            menuTitle
+            showInMenu
+          }
+        }
+        ... on ModulesModulesFundPortfolioLayout {
+          header
+          moduleSettings {
+            active
+            menuTitle
+            showInMenu
+          }
+          portfolioItems {
+            exited
+            logo {
+              node {
+                sourceUrl
+                mimeType
+                mediaDetails {
+                  width
+                  height
+                }
+                imageFileDetails {
+                  width
+                }
+              }
+            }
+          }
+        }
+        ... on ModulesModulesMediaLayout {
+          header
+          mediaDownloads {
+            label
+            file {
+              node {
+                sourceUrl
+                mediaItemUrl
+                mimeType
+                filePath
+                file
+              }
+            }
+          }
+          mediaKit {
+            node {
+              sourceUrl
+              mediaType
+              mediaItemUrl
+              mimeType
+              file
+            }
+          }
+          moduleSettings {
+            showInMenu
+            moduleId
+            menuTitle
+            active
+          }
+          mediaPeople {
+            name
+            email
+            image {
+              node {
+                sourceUrl
+                mediaDetails {
+                  width
+                  height
+                }
+                imageFileDetails {
+                  width
+                }
+              }
+            }
+          }
+        }
+        ... on ModulesModulesContactsLayout {
+          header
+          moduleSettings {
+            active
+            menuTitle
+            moduleId
+            showInMenu
+          }
+          # map {
+          #   address
+          #   googleMapsLink
+          #   mapImage {
+          #     node {
+          #       sourceUrl
+          #       mediaDetails {
+          #         width
+          #         height
+          #       }
+          #     }
+          #   }
+          # }
+        }
+        # ... on ModulesModulesWebinarsLayout {
+        #   selection
+        #   moduleSettings {
+        #     active
+        #     menuTitle
+        #     moduleId
+        #     showInMenu
+        #   }
+        # }
+        ... on ModulesModulesNewsLayout {
+          header
+          selection
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            moduleId
+            menuTitle
+            active
+          }
+        }
+        ... on ModulesModulesOpportunitiesLayout {
+          header
+          moduleSettings {
+            showInMenu
+            moduleId
+            menuTitle
+            active
+          }
+        }
+        ... on ModulesModulesStepsLayout {
+          contentAlignment
+          header
+          steps {
+            content
+            title
+          }
+          moduleSettings {
+            showInMenu
+            moduleId
+            menuTitle
+            active
+          }
+          buttons {
+            label
+            type
+            url
+            color
+            page {
+              nodes {
+                uri
+              }
+            }
+          }
+        }
+        ... on ModulesModulesScrollSectionsLayout {
+          header
+          scrollSections {
+            sectionContent
+            sectionTitle
+            sectionIllustration {
+              node {
+                sourceUrl
+                mediaDetails {
+                  width
+                  height
+                }
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            moduleId
+            menuTitle
+            active
+          }
+        }
+        ... on ModulesModulesCaseStudiesLayout {
+          selectedCaseStudies {
+            nodes {
+              ... on CaseStudy {
+                id
+                content
+                featuredImage {
+                  node {
+                    sourceUrl
+                    imageFileDetails {
+                      width
+                    }
+                    mediaDetails {
+                      width
+                    }
+                  }
+                }
+                caseStudyDetails {
+                  problemsSolved {
+                    title
+                  }
+                }
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesTestimonialsLayout {
+          header
+          selectedTestimonials {
+            nodes {
+              ... on Testimonial {
+                id
+                content
+                testimonialDetails {
+                  author {
+                    name
+                    company
+                    photo {
+                      node {
+                        sourceUrl
+                        mediaDetails {
+                          width
+                          height
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+        ... on ModulesModulesClientsLayout {
+          header
+          clientItems {
+            ... on ModulesModulesClientItemsClientLogoLayout {
+              fieldGroupName
+              clientLogoImage {
+                node {
+                  sourceUrl
+                  mediaDetails {
+                    width
+                  }
+                  imageFileDetails {
+                    width
+                  }
+                }
+              }
+            }
+            ... on ModulesModulesClientItemsClientTestimonialLayout {
+              fieldGroupName
+              testimonialReference {
+                nodes {
+                  ... on Testimonial {
+                    content
+                    testimonialDetails {
+                      author {
+                        name
+                        company
+                      }
+                      withNumber
+                      number {
+                        label
+                        value
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          moduleSettings {
+            showInMenu
+            menuTitle
+            active
+            moduleId
+          }
+        }
+      }
+    }
+    seo {
+      title
+      metaDesc
+      opengraphTitle
+      opengraphDescription
+      opengraphImage {
+        sourceUrl
+      }
+    }
+  }
+}

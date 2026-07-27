@@ -1,0 +1,21 @@
+@import '../../styles/main.css' reference;
+
+.step {
+  &:hover {
+    li {
+      &:before {
+        @apply bg-orange;
+      }
+    }
+  }
+}
+
+.content {
+  li {
+    @apply relative pl-4 mb-4 last:mb-0;
+    &:before {
+      @apply absolute transition-colors left-0 w-2 h-2 bg-alabaster-200 content-[''];
+      top: 0.4em;
+    }
+  }
+}

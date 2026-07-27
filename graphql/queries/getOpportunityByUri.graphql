@@ -1,0 +1,55 @@
+query GetOpportunityByUri($uri: ID!) {
+  opportunity(id: $uri, idType: URI) {
+    title
+    content
+    uri
+    slug
+    opportunityDetails {
+      externalUrl
+    }
+    opportunityCategories {
+      nodes {
+        slug
+        name
+      }
+    }
+    opportunityLocations {
+      nodes {
+        slug
+        name
+      }
+    }
+    opportunityTypes {
+      nodes {
+        name
+        slug
+      }
+    }
+    opportunityCompanies {
+      nodes {
+        name
+        opportunityCompanyDetails {
+          website
+          logo {
+            node {
+              sourceUrl
+              mediaDetails {
+                width
+                height
+              }
+            }
+          }
+        }
+      }
+    }
+    seo {
+      title
+      metaDesc
+      opengraphTitle
+      opengraphDescription
+      opengraphImage {
+        sourceUrl
+      }
+    }
+  }
+}

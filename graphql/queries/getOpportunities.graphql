@@ -1,0 +1,41 @@
+query GetOpportunities {
+  opportunities(first: 100) {
+    nodes {
+      title
+      uri
+      slug
+      opportunityDetails {
+        externalUrl
+      }
+      opportunityCategories {
+        nodes {
+          slug
+          name
+        }
+      }
+      opportunityLocations {
+        nodes {
+          slug
+          name
+        }
+      }
+      opportunityTypes {
+        nodes {
+          name
+          slug
+        }
+      }
+      # opportunityCompanies {
+      #   nodes {
+      #     name
+      #   }
+      # }
+    }
+  }
+  opportunityCategories(where: { hideEmpty: true }, first: 50) {
+    nodes {
+      name
+      slug
+    }
+  }
+}

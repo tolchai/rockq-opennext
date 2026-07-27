@@ -1,0 +1,8 @@
+.feature {
+  h3 {
+    /* @apply mb-4; */
+  }
+  p {
+    /* @apply text-neutral-600 max-md:text-14; */
+  }
+}
