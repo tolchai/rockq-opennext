@@ -10,7 +10,6 @@ import Modules from '@/components/Modules';
 import { fetchPageByUri, fetchServiceByUri } from '@/lib/api';
 import { createApolloClient } from '@/lib/apolloClient';
 import { gql } from '@apollo/client';
-import pages from 'next/dist/build/templates/pages';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import ServiceHero from '@/components/ServiceHero';
