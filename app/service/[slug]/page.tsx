@@ -103,7 +103,7 @@ export default async function Service({ params }: { params: Promise<P> }) {
   } = data;
   return (
     <Layout
-      options={options.globalSettings}
+      options={options?.globalSettings}
       headerMenu={headerMenu?.nodes || []}
       footerMenu={footerMenu?.nodes || []}
       postType='service'
@@ -114,7 +114,7 @@ export default async function Service({ params }: { params: Promise<P> }) {
       <ServiceHero page={page} postType='service' />
       <Modules
         modules={page.modules?.modules ?? []}
-        options={options.globalSettings}
+        options={options?.globalSettings}
         postType='service'
       />
     </Layout>

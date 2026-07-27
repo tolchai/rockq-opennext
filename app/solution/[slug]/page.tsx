@@ -109,7 +109,7 @@ export default async function Solution({ params }: { params: Promise<P> }) {
   } = data;
   return (
     <Layout
-      options={options.globalSettings}
+      options={options?.globalSettings}
       headerMenu={headerMenu?.nodes || []}
       footerMenu={footerMenu?.nodes || []}
       postType='solution'
@@ -120,7 +120,7 @@ export default async function Solution({ params }: { params: Promise<P> }) {
       <ServiceHero page={page} postType='solution' />
       <Modules
         modules={page.modules?.modules ?? []}
-        options={options.globalSettings}
+        options={options?.globalSettings}
         postType='solution'
       />
     </Layout>
